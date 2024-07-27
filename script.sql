@@ -96,6 +96,7 @@ OFFSET 5;
 -- province, ordered high to low.
 select province, count(client_number) as number_of_clients from clients
 group by province
+having count(client_number) > 1
 order by number_of_clients desc;
 
 -- 27. Display information clients have number of sales order more than 1.
